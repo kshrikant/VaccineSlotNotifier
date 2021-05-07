@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03A0327626458EA300A13AE7 /* IMG3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 03A0327326458EA300A13AE7 /* IMG3.PNG */; };
+		03A0327726458EA300A13AE7 /* IMG2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 03A0327426458EA300A13AE7 /* IMG2.PNG */; };
+		03A0327826458EA300A13AE7 /* IMG1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 03A0327526458EA300A13AE7 /* IMG1.PNG */; };
 		1CEBDDF32644428600959520 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEBDDF22644428600959520 /* AppDelegate.swift */; };
 		1CEBDDF52644428600959520 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEBDDF42644428600959520 /* SceneDelegate.swift */; };
 		1CEBDDF72644428600959520 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEBDDF62644428600959520 /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03A0327326458EA300A13AE7 /* IMG3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG3.PNG; sourceTree = "<group>"; };
+		03A0327426458EA300A13AE7 /* IMG2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG2.PNG; sourceTree = "<group>"; };
+		03A0327526458EA300A13AE7 /* IMG1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG1.PNG; sourceTree = "<group>"; };
 		1CEBDDEF2644428600959520 /* VaccineSlotNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaccineSlotNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CEBDDF22644428600959520 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CEBDDF42644428600959520 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,12 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03A0327226458EA300A13AE7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				03A0327326458EA300A13AE7 /* IMG3.PNG */,
+				03A0327426458EA300A13AE7 /* IMG2.PNG */,
+				03A0327526458EA300A13AE7 /* IMG1.PNG */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		1CEBDDE62644428600959520 = {
 			isa = PBXGroup;
 			children = (
 				1CEBDDF12644428600959520 /* VaccineSlotNotifier */,
 				1CEBDE082644428700959520 /* VaccineSlotNotifierTests */,
 				1CEBDE132644428700959520 /* VaccineSlotNotifierUITests */,
+				03A0327226458EA300A13AE7 /* Images */,
 				1CEBDDF02644428600959520 /* Products */,
 				522A4386983A8C0413307BC3 /* Pods */,
 				2E07334D2A8767C9A661AD88 /* Frameworks */,
@@ -260,6 +277,9 @@
 				1CEBDDFF2644428700959520 /* LaunchScreen.storyboard in Resources */,
 				1CEBDDFC2644428700959520 /* Assets.xcassets in Resources */,
 				1CEBDDFA2644428600959520 /* Main.storyboard in Resources */,
+				03A0327626458EA300A13AE7 /* IMG3.PNG in Resources */,
+				03A0327726458EA300A13AE7 /* IMG2.PNG in Resources */,
+				03A0327826458EA300A13AE7 /* IMG1.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VaccineSlotNotifier/Info.plist;
@@ -526,6 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VaccineSlotNotifier/Info.plist;

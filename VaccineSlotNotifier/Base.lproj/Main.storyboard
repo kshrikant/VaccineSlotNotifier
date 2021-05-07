@@ -37,14 +37,14 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRB-Wr-Wcm">
                                 <rect key="frame" x="107" y="351" width="200" height="45"/>
-                                <color key="backgroundColor" red="0.023529411764705882" green="0.12941176470588234" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90588235294117647" green="0.99607843137254903" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="3Fq-NQ-TZ4"/>
                                     <constraint firstAttribute="height" constant="45" id="ss6-OG-2Km"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Find Slot &amp; Notify">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.023529411764705882" green="0.12941176470588234" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="btnNotifyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kaG-YO-EPL"/>
@@ -84,7 +84,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="COWIN" width="470" height="148"/>
+        <image name="COWIN" width="552" height="221"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
