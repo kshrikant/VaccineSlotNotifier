@@ -18,6 +18,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 
     @IBOutlet weak var tfPinCode: UITextField!
     @IBOutlet weak var btnFindSlotNotify: UIButton!
+    @IBOutlet weak var tfDate: UITextField!
+    var datePicker :UIDatePicker!
     var slotTimer: Timer?
 
     //MARK:- View life cycle methods
@@ -25,6 +27,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestNotificationPermission()
+        self.tfDate.setInputViewDatePicker(target: self, selector: #selector(tapDone))
+        self.setDateToTextField(date: Date())
     }
     //MARK:- Button events
 
@@ -48,7 +52,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             ]
             DispatchQueue.main.async {
                 
-                AF.request("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=\(self.tfPinCode.text!)&date=\(Date().string(format: "dd-MM-yyyy"))", method: .get, parameters: nil, headers:headers)
+                AF.request("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=\(self.tfPinCode.text!)&date=\(self.tfPinCode.text!)", method: .get, parameters: nil, headers:headers)
                    .responseData { (response) in
                        switch response.result {
                        case .success(let value):
@@ -90,6 +94,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             UNUserNotificationCenter.current().delegate = self
         })
     }
+    
     private func triggerLocalNotification(availableCount:Int, ageLimit: Int) {
         let displayText = "Hello, there is slot available at your pincode. The age group is \(ageLimit) and only \(availableCount) are available."
         self.view.makeToast(displayText, duration: 8.0, position: .center)
@@ -103,12 +108,26 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         let request = UNNotificationRequest(identifier: "CowinSlotNotification", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
-    
+
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent
         notification: UNNotification, withCompletionHandler completionHandler:
         @escaping (UNNotificationPresentationOptions) -> Void) {
         return completionHandler(UNNotificationPresentationOptions.banner)
     }
+    
+    @objc func tapDone() {
+        if let datePicker = self.tfDate.inputView as? UIDatePicker {
+            self.setDateToTextField(date: datePicker.date)
+        }
+        self.tfDate.resignFirstResponder()
+    }
+    
+    private func setDateToTextField(date: Date) {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "dd-MM-yyyy"
+        self.tfDate.text = dateformatter.string(from: date)
+    }
+   
 }
 
 extension Date {
@@ -119,6 +138,37 @@ extension Date {
     }
 }
 
+extension UITextField {
+    
+    func setInputViewDatePicker(target: Any, selector: Selector) {
+        let screenWidth = UIScreen.main.bounds.width
+        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
+        datePicker.datePickerMode = .date
+        let today = Date()
+        let tomm = Calendar.current.date(byAdding: .day, value: 6, to: today)!
+        datePicker.minimumDate = today
+        datePicker.maximumDate = tomm
+        
+        if #available(iOS 14, *) {
+          datePicker.preferredDatePickerStyle = .wheels
+          datePicker.sizeToFit()
+        }
+        self.inputView = datePicker
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: 44.0))
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancel = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(tapCancel))
+        let barButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: selector)
+        toolBar.setItems([cancel, flexible, barButton], animated: false)
+        self.inputAccessoryView = toolBar
+    }
+    
+    @objc func tapCancel() {
+        self.resignFirstResponder()
+    }
+    
+
+}
 //MARK:- Response Handling
 
 struct BaseSessionResponse : Mappable {

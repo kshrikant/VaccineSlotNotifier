@@ -59,22 +59,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAn-Kh-1Zh">
+                                <rect key="frame" x="197.5" y="242" width="115" height="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="z5o-Bv-98Q"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9F-35-hVK">
+                                <rect key="frame" x="30" y="244" width="137.5" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0di-o9-nAj" firstAttribute="centerY" secondItem="Ewu-Tf-z0p" secondAttribute="centerY" id="5o7-nM-lwa"/>
                             <constraint firstItem="fx7-v4-JBM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="93i-Hm-pJT"/>
+                            <constraint firstItem="e9F-35-hVK" firstAttribute="leading" secondItem="Ewu-Tf-z0p" secondAttribute="leading" id="BK0-vc-TGH"/>
                             <constraint firstItem="VRB-Wr-Wcm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Coc-tv-59E"/>
+                            <constraint firstItem="qAn-Kh-1Zh" firstAttribute="height" secondItem="0di-o9-nAj" secondAttribute="height" id="G1a-Zu-9dp"/>
                             <constraint firstItem="Ewu-Tf-z0p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RiT-lo-3gI"/>
+                            <constraint firstItem="qAn-Kh-1Zh" firstAttribute="centerY" secondItem="e9F-35-hVK" secondAttribute="centerY" id="Scw-iE-LLB"/>
                             <constraint firstItem="VRB-Wr-Wcm" firstAttribute="top" secondItem="0di-o9-nAj" secondAttribute="bottom" constant="145" id="U7r-de-HUE"/>
                             <constraint firstItem="0di-o9-nAj" firstAttribute="leading" secondItem="Ewu-Tf-z0p" secondAttribute="trailing" constant="30" id="VP8-55-Fkw"/>
+                            <constraint firstItem="qAn-Kh-1Zh" firstAttribute="leading" secondItem="e9F-35-hVK" secondAttribute="trailing" constant="30" id="YmP-rk-uvA"/>
+                            <constraint firstItem="e9F-35-hVK" firstAttribute="top" secondItem="Ewu-Tf-z0p" secondAttribute="bottom" constant="40" id="bI5-L8-zvT"/>
                             <constraint firstItem="fx7-v4-JBM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dDp-Xw-buf"/>
+                            <constraint firstItem="qAn-Kh-1Zh" firstAttribute="width" secondItem="0di-o9-nAj" secondAttribute="width" id="dU1-M0-quw"/>
+                            <constraint firstItem="e9F-35-hVK" firstAttribute="height" secondItem="Ewu-Tf-z0p" secondAttribute="height" id="jZm-1X-igZ"/>
                             <constraint firstItem="Ewu-Tf-z0p" firstAttribute="top" secondItem="fx7-v4-JBM" secondAttribute="bottom" constant="30" id="l7g-dT-EHX"/>
+                            <constraint firstItem="e9F-35-hVK" firstAttribute="width" secondItem="Ewu-Tf-z0p" secondAttribute="width" id="p7j-vu-yAL"/>
+                            <constraint firstItem="qAn-Kh-1Zh" firstAttribute="leading" secondItem="e9F-35-hVK" secondAttribute="trailing" constant="30" id="v6v-HY-YaR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnFindSlotNotify" destination="VRB-Wr-Wcm" id="UQY-cg-FaL"/>
+                        <outlet property="tfDate" destination="qAn-Kh-1Zh" id="6dh-0V-nmj"/>
                         <outlet property="tfPinCode" destination="0di-o9-nAj" id="lRB-NM-76G"/>
                     </connections>
                 </viewController>
